@@ -27,7 +27,10 @@
                         </li>
                       @else
                         @if (count($url['childs']))
-                        <li class="rd-nav-item"><a class="rd-nav-link" href="#"><i class="fa fa-lock"></i> {{ $url['data']['name'] }}</a>
+                        {{-- s-cart --}}
+                        {{-- <li class="rd-nav-item"><a class="rd-nav-link" href="#"><i class="fa fa-lock"></i> {{ $url['data']['name'] }}</a> --}}
+                        <li class="rd-nav-item m-0 p-0">
+
                           <ul class="rd-menu rd-navbar-dropdown">
                               @foreach ($url['childs'] as $item)
                               <li class="rd-dropdown-item">
@@ -68,6 +71,7 @@
 
                     @else
                     <li class="rd-nav-item"><a class="rd-nav-link" href="#"><i class="fa fa-lock"></i> {{ sc_language_render('customer.my_profile') }}</a>
+
                         <ul class="rd-menu rd-navbar-dropdown">
                             <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ sc_route('customer.index') }}"><i class="fa fa-user"></i> {{ sc_language_render('front.my_profile') }}</a></li>
                             <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ sc_route('logout') }}" rel="nofollow" onclick="event.preventDefault();
@@ -92,7 +96,7 @@
                     @endguest
                     @endif
 
-                    @if (sc_config('link_language', null, 1))
+                    {{-- @if (sc_config('link_language', null, 1))
                     @if (count($sc_languages)>1)
                     <li class="rd-nav-item">
                         <a class="rd-nav-link" href="#">
@@ -109,9 +113,9 @@
                         </ul>
                     </li>
                     @endif
-                    @endif
+                    @endif --}}
 
-                    @if (sc_config('link_currency', null, 1) && config('s-cart.ecommerce_mode', 1))
+                    {{-- @if (sc_config('link_currency', null, 1) && config('s-cart.ecommerce_mode', 1))
                     @if (count($sc_currencies)>1)
                     <li class="rd-nav-item">
                         <a class="rd-nav-link" href="#">
@@ -128,7 +132,7 @@
                         </ul>
                     </li>
                     @endif
-                    @endif
+                    @endif --}}
 
                   </ul>
                 </div>
