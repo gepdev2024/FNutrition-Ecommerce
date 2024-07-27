@@ -4732,15 +4732,18 @@ hr {
 }
 
 .button-secondary, .button-secondary:focus {
-	color: #151515;
-	background-color: #e9da5d;
-	border-color: #e9da5d;
+	color: #000;
+	background-color: #0096FF;
+	border-color: #0096FF;
+	border-radius: 15px
 }
 
 .button-secondary:hover, .button-secondary:active {
-	color: #ff0000;
+	color: #0096FF;
 	background-color: #f5f3f3;
-	border-color: #d9a1a3;
+	border-color: #0096FF;
+	border-radius: 15px
+
 }
 
 .button-secondary.button-ujarak::before {
@@ -10792,6 +10795,7 @@ html:not(.lt-ie10) .not-animated {
 * ToTop
 */
 .ui-to-top {
+	display: none;
 	position: fixed;
 	overflow: hidden;
 	text-align: center;
@@ -10810,6 +10814,7 @@ html:not(.lt-ie10) .not-animated {
 }
 
 .ui-to-top, .ui-to-top:focus, .ui-to-top:active {
+	display:none;
 	color: #ffffff;
 	background: #d9a1a3;
 }
@@ -10821,6 +10826,7 @@ html:not(.lt-ie10) .not-animated {
 }
 
 .ui-to-top.active {
+	display:none;
 	transform: translate3d(0, 0, 0);
 }
 
@@ -10831,6 +10837,7 @@ html.tablet .ui-to-top {
 
 @media (min-width: 576px) {
 	.ui-to-top {
+		display:hidden;
 		right: 40px;
 		bottom: 40px;
 	}
@@ -19844,7 +19851,7 @@ disabled look for disabled choices in the results dropdown
 }
 
 .logo-footer {
-	height: 30px;
+	height: 25px;
 }
 .products-lasView .row {
 	padding-top:10px;

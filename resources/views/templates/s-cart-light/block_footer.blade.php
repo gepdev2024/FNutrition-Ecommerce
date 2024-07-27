@@ -15,20 +15,20 @@
                                   <div>
                                       <ul class="list-inline list-social list-inline-sm">
                                           @if (sc_config('facebook_url'))
-                                              <li><a class="icon mdi mdi-facebook"
-                                                      href="{{ sc_config('facebook_url') }}"></a></li>
+                                              <li><p class="icon mdi mdi-facebook"
+                                                      ></p></li>
                                           @endif
                                           @if (sc_config('twitter_url'))
-                                              <li><a class="icon mdi mdi-twitter"
-                                                      href="{{ sc_config('twitter_url') }}"></a></li>
+                                              <li><p class="icon mdi mdi-twitter"
+                                                      ></p></li>
                                           @endif
                                           @if (sc_config('instagram_url'))
-                                              <li><a class="icon mdi mdi-instagram"
-                                                      href="{{ sc_config('instagram_url') }}"></a></li>
+                                              <li><p class="icon mdi mdi-instagram"
+                                                      ></p></li>
                                           @endif
                                           @if (sc_config('youtube_url'))
                                               <li><a class="icon mdi mdi-youtube-play"
-                                                      href="{{ sc_config('youtube_url') }}"></a></li>
+                                                      ></a></li>
                                           @endif
                                       </ul>
                                   </div>
@@ -107,23 +107,34 @@
           <div class="footer-classic-panel">
               <div class="container">
                   <div class="row row-10 align-items-center justify-content-sm-between">
-                      <div class="col-md-auto">
+                      <div class="col-md-auto mx-auto">
                           <p class="rights"><span>&copy;&nbsp;</span><span
                                   class="copyright-year"></span><span>&nbsp;</span><span>{{ sc_store('title', $storeId ?? null) }}</span><span>.&nbsp;
                                   All rights reserved</span></p>
                       </div>
-                      @if (sc_config('fanpage_url'))
-                          <div class="col-md-auto order-md-1"> <a target="_blank"
-                                  href="{{ sc_config('fanpage_url') }}">Fanpage FB</a>
-                          </div>
-                      @endif
-                      @if (!sc_config('hidden_copyright_footer'))
-                          <div class="col-md-auto">
-                              Power by <a href="{{ config('s-cart.homepage') }}">{{ config('s-cart.name') }}
-                                  {{ config('s-cart.sub-version') }}</a>
-                          </div>
-                      @endif
                   </div>
               </div>
           </div>
       </footer>
+    
+      <!-- Script Chatbot -->
+    <!-- Tambahkan div untuk chatbot -->
+    <div id="aichatbot"></div>
+    
+    <!-- Script Chatbot -->
+    <script>
+        !function(w, d, s, ...args){
+          var div = d.createElement('div');
+          div.id = 'aichatbot';
+          d.body.appendChild(div);
+          w.chatbotConfig = args;
+          var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s);
+          j.defer = true;
+          j.type = 'module';
+          j.src = 'https://aichatbot.sendbird.com/index.js';
+          f.parentNode.insertBefore(j, f);
+        }(window, document, 'script', '324EC687-2443-41ED-B349-BECB7B74C6CB', 'onboarding_bot', {
+          apiHost: 'https://api-cf-us-1.sendbird.com',
+        });
+        </script>

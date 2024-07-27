@@ -11,7 +11,7 @@ $layout_page = shop_contact
 <div class="container">
     <div class="row">
         <div class="col-12 col-sm-12 col-md-6 contact_content">
-            <img src="{{ sc_file(sc_store('logo')) }}">
+            <img src="{{ sc_file(sc_store('logo')) }}" style="width:250px;margin-bottom:20px;";>
             <address>
                 <p>{{ sc_store('title') }}</p>
                 <p><span class="icon mdi mdi-map-marker"></span> {{ sc_store('address') }}</p>
@@ -68,9 +68,10 @@ $layout_page = shop_contact
                             @endif
                         </div>
                         <div class="col-12 col-sm-12 col-md-12 form-group {{ $errors->has('content') ? ' has-error' : '' }}">
-                            <label class="control-label">{{ sc_language_render('contact.content') }}:</label>
+                            {{-- <label class="control-label">{{ sc_language_render('contact.content') }}:</label> --}}
+                            <label class="control-label">Feedback</label>
                             <textarea class="form-control {{ ($errors->has('content'))?"input-error":"" }}" rows="5"
-                                cols="75" name="content" placeholder="{{ sc_language_render('contact.content') }}">{{ old('content') }}</textarea>
+                                cols="75" name="content" placeholder="Feedback">{{ old('content') }}</textarea>
                             @if ($errors->has('content'))
                             <span class="help-block">
                                 {{ $errors->first('content') }}
